@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamrire <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/07 17:14:38 by yamrire           #+#    #+#             */
-/*   Updated: 2022/01/08 14:07:26 by yamrire          ###   ########.fr       */
+/*   Created: 2022/01/08 14:03:27 by yamrire           #+#    #+#             */
+/*   Updated: 2022/01/08 14:07:51 by yamrire          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef LIBFTPRINTF_H
+#define LIBFTPRINTF_H
 
-# include <unistd.h>
+#include <stdarg.h>
+#include "libft/libft.h"
 
-void	ft_putchar_fd(char c, int fd);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putnbrunsign_fd(unsigned long long n, int fd);
-void	ft_putstr_fd(char *s, int fd);
+void ft_nbr_base (unsigned long long n, int base);
+void ft_nbr_gbase (unsigned long long n, int base);
 
 #endif
