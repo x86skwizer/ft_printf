@@ -6,7 +6,7 @@
 #    By: yamrire <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/08 13:18:57 by yamrire           #+#    #+#              #
-#    Updated: 2022/01/08 14:46:31 by yamrire          ###   ########.fr        #
+#    Updated: 2022/01/08 15:11:56 by yamrire          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,17 +15,13 @@ NAME = libftprintf.a
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 OBJ = $(SRC:%.c=%.o)
-LIBFT = libft/libft.a
 
 all : $(NAME) 
 
-$(NAME) : $(OBJ) $(LIBFT)
-
-	$(CC) $(CFLAGS) -c $(SRC) $(LIBFT)
-	ar rc $(NAME) $(OBJ) 
-
-$(LIBFT) :
+$(NAME) : $(OBJ)
 	make -C libft/
+	$(CC) $(CFLAGS) -c $(SRC)
+	ar rc $(NAME) $(OBJ) 
 
 clean : 
 	rm -f $(OBJ)
