@@ -6,17 +6,11 @@
 /*   By: yamrire <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 01:50:45 by yamrire           #+#    #+#             */
-/*   Updated: 2022/01/05 18:44:16 by yamrire          ###   ########.fr       */
+/*   Updated: 2022/01/08 14:07:42 by yamrire          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdarg.h>
-#include <unistd.h>
-#include "libft/libft.h"
-
-void ft_nbr_base (unsigned long long n, int base);
-void ft_nbr_gbase (unsigned long long n, int base);
+#include "libftprintf.h"
 
 int	ft_printf(const char *str, ...)
 {
@@ -60,13 +54,4 @@ int	ft_printf(const char *str, ...)
 		i++;
 	}
 	return i;
-}
-
-int	main()
-{
-	int a = 5;
-	int *p = &a;
-	ft_printf("sasS|%x|Hgccv", 242);
-	ft_putchar_fd('\n', 1);
-	return 0;
 }
