@@ -6,7 +6,7 @@
 /*   By: yamrire <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 01:50:45 by yamrire           #+#    #+#             */
-/*   Updated: 2022/01/08 18:02:42 by yamrire          ###   ########.fr       */
+/*   Updated: 2022/01/10 12:38:21 by yamrire          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,9 @@ int ft_printf(const char *str, ...)
 		{
 			i++;
 			handle_print_cases(str, i, format);
-			i++;
 		}
-		ft_putchar_fd(str[i], 1);
+		else
+			ft_putchar_fd(str[i], 1);
 		i++;
 	}
 	return i;
