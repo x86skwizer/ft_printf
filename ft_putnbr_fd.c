@@ -6,21 +6,24 @@
 /*   By: yamrire <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 23:44:51 by yamrire           #+#    #+#             */
-/*   Updated: 2022/01/10 15:11:39 by yamrire          ###   ########.fr       */
+/*   Updated: 2022/01/11 13:34:33 by yamrire          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_putnbr_fd(long n, int fd)
+int	ft_putnbr_fd(long n, int fd)
 {
+	int	i;
 
+	i = 0;
 	if (n < 0)
 	{
 		n *= -1;
-		ft_putchar_fd('-', fd);
+		i += ft_putchar_fd('-', fd);
 	}
 	if (n / 10)
 		ft_putnbr_fd (n / 10, fd);
-	ft_putchar_fd (n % 10 + '0', fd);
+	i += ft_putchar_fd (n % 10 + '0', fd);
+	return i;
 }
