@@ -6,7 +6,7 @@
 /*   By: yamrire <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 18:25:16 by yamrire           #+#    #+#             */
-/*   Updated: 2022/01/11 13:37:15 by yamrire          ###   ########.fr       */
+/*   Updated: 2022/01/11 14:58:11 by yamrire          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 int ft_nbr_base (unsigned long long n, int base, int which)
 {
-	char *bb;
+	char *ptr_base;
 	int	i;
 
 	i = 0;
 	if (which)
-		bb = "0123456789ABCDEF";
+		ptr_base = "0123456789ABCDEF";
 	else
-		bb = "0123456789abcdef";
+		ptr_base = "0123456789abcdef";
 	if (n / base)
 		ft_nbr_base (n / base, base, which);
-	i += ft_putchar_fd (bb[n % base], 1);
+	i += ft_putchar_fd (ptr_base[n % base], 1);
 	return i;
 }
