@@ -6,7 +6,7 @@
 /*   By: yamrire <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 01:50:45 by yamrire           #+#    #+#             */
-/*   Updated: 2022/01/11 14:18:25 by yamrire          ###   ########.fr       */
+/*   Updated: 2022/01/11 15:17:14 by yamrire          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,23 +28,23 @@ int	handle_print_cases(const char *str, int i, va_list format)
 	n = 0;
 	unsign = 0;
 	if (str[i] == 'c')
-		n = ft_putchar_fd((char)va_arg(format, int), 1);
+		n = ft_putchar((char)va_arg(format, int));
 	else if (str[i] == 's')
-		n = ft_putstr_fd(va_arg(format, char *), 1);
+		n = ft_putstr(va_arg(format, char *));
 	else if (str[i] == 'd' || str[i] == 'i')
-		n = ft_putnbr_fd(va_arg(format, int), 1);
+		n = ft_putnbr(va_arg(format, int));
 	else if (str[i] == 'u')
 	{
 		unsign = va_arg(format, unsigned int);
-		n = ft_putnbrunsign_fd(unsign, 1);
+		n = ft_putnbrunsign(unsign);
 	}
 	else if (str[i] == 'x' || str[i] == 'X')
 		n = ft_nbr_base(va_arg(format, unsigned int), 16, getWhichHex(str[i]));
 	else if (str[i] == '%')
-		n = ft_putchar_fd('%', 1);
+		n = ft_putchar('%');
 	else if (str[i] == 'p')
 	{
-		n = ft_putstr_fd("0x", 1);
+		n = ft_putstr("0x");
 		n += ft_nbr_base(va_arg(format, unsigned int), 16, 0);
 	}
 	return (n);
@@ -67,7 +67,7 @@ int ft_printf(const char *str, ...)
 			n += handle_print_cases(str, i , format);
 		}
 		else
-			n += ft_putchar_fd(str[i], 1);
+			n += ft_putchar(str[i]);
 		i++;
 	}
 	va_end(format);

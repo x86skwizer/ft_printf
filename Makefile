@@ -6,11 +6,11 @@
 #    By: yamrire <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/08 13:18:57 by yamrire           #+#    #+#              #
-#    Updated: 2022/01/08 18:21:20 by yamrire          ###   ########.fr        #
+#    Updated: 2022/01/11 15:16:01 by yamrire          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = ft_nbr_base.c ft_printf.c ft_putchar_fd.c ft_putnbr_fd.c ft_putnbrunsign_fd.c ft_putstr_fd.c 
+SRC = ft_nbr_base.c ft_printf.c ft_putchar.c ft_putnbr.c ft_putnbrunsign.c ft_putstr.c 
 NAME = libftprintf.a
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
