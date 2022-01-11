@@ -6,23 +6,26 @@
 /*   By: yamrire <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 23:46:41 by yamrire           #+#    #+#             */
-/*   Updated: 2022/01/08 18:18:46 by yamrire          ###   ########.fr       */
+/*   Updated: 2022/01/11 13:32:37 by yamrire          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
+	int n;
 
 	i = 0;
+	n = 0;
 	if (s)
 	{
 		while (s[i] != '\0')
 		{
-			ft_putchar_fd(s[i], fd);
+			n += ft_putchar_fd(s[i], fd);
 			i++;
 		}
 	}
+	return (n);
 }
