@@ -6,18 +6,18 @@
 /*   By: yamrire <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 01:50:45 by yamrire           #+#    #+#             */
-/*   Updated: 2022/01/12 13:07:08 by yamrire          ###   ########.fr       */
+/*   Updated: 2022/01/12 13:26:22 by yamrire          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 #include <stdio.h>
 
-int getWhichHex(char c)
+int	gethex(char c)
 {
 	if (c == 'X')
-		return 1;
-	return 0;
+		return (1);
+	return (0);
 }
 
 int	handle_print_cases(const char *str, int i, va_list *format)
@@ -39,7 +39,7 @@ int	handle_print_cases(const char *str, int i, va_list *format)
 		len = ft_putnbrunsign(unsign);
 	}
 	else if (str[i] == 'x' || str[i] == 'X')
-		len = ft_nbr_base(va_arg(*format, unsigned int), 16, getWhichHex(str[i]));
+		len = ft_nbr_base(va_arg(*format, unsigned int), 16, gethex(str[i]));
 	else if (str[i] == '%')
 		len = ft_putchar('%');
 	else if (str[i] == 'p')
@@ -52,11 +52,11 @@ int	handle_print_cases(const char *str, int i, va_list *format)
 	return (len);
 }
 
-int ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
-	int i;
-	int	len;
-	va_list format;
+	int		i;
+	int		len;
+	va_list	format;
 
 	va_start(format, str);
 	i = 0;
@@ -66,7 +66,7 @@ int ft_printf(const char *str, ...)
 		if (str[i] == '%')
 		{
 			i++;
-			len += handle_print_cases(str, i , &format);
+			len += handle_print_cases(str, i, &format);
 		}
 		else
 			len += ft_putchar(str[i]);
