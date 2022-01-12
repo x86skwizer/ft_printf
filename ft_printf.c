@@ -6,7 +6,7 @@
 /*   By: yamrire <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 01:50:45 by yamrire           #+#    #+#             */
-/*   Updated: 2022/01/12 13:26:22 by yamrire          ###   ########.fr       */
+/*   Updated: 2022/01/12 15:06:34 by yamrire          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	handle_print_cases(const char *str, int i, va_list *format)
 	len = 0;
 	unsign = 0;
 	if (str[i] == 'c')
-		len = ft_putchar((char)va_arg(*format, int));
+		len = ft_putchar(va_arg(*format, int));
 	else if (str[i] == 's')
 		len = ft_putstr(va_arg(*format, char *));
 	else if (str[i] == 'd' || str[i] == 'i')
@@ -78,6 +78,8 @@ int	ft_printf(const char *str, ...)
 
 // int	main(void)
 // {
-// 	ft_printf("l%cl%cl%cl%cl%c", 'a', 'i', 'u', 'e', 'o');
+// 	int	test;
+// 	ft_printf("%p\n", &test);
+// 	printf("%p\n", &test);
 // 	return 0;
 // }
