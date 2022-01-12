@@ -6,7 +6,7 @@
 /*   By: yamrire <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 14:03:27 by yamrire           #+#    #+#             */
-/*   Updated: 2022/01/12 13:20:33 by yamrire          ###   ########.fr       */
+/*   Updated: 2022/01/12 15:12:34 by yamrire          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ int	ft_putnbr(long n);
 int	ft_putnbrunsign(unsigned long long n);
 int	ft_putstr(char *s);
 int	ft_printf(const char *str, ...);
-int	ft_nbr_base(unsigned long long n, int base, int which);
+int	ft_nbr_base(unsigned long long n, int base, int which, int *len);
 
 #endif

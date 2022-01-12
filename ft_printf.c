@@ -6,7 +6,7 @@
 /*   By: yamrire <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 01:50:45 by yamrire           #+#    #+#             */
-/*   Updated: 2022/01/12 15:06:34 by yamrire          ###   ########.fr       */
+/*   Updated: 2022/01/12 15:30:41 by yamrire          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,13 @@ int	handle_print_cases(const char *str, int i, va_list *format)
 		len = ft_putnbrunsign(unsign);
 	}
 	else if (str[i] == 'x' || str[i] == 'X')
-		len = ft_nbr_base(va_arg(*format, unsigned int), 16, gethex(str[i]));
+		len = ft_nbr_base(va_arg(*format, unsigned int), 16, gethex(str[i]), &len);
 	else if (str[i] == '%')
 		len = ft_putchar('%');
 	else if (str[i] == 'p')
 	{
-		len = ft_putstr("0x");
-		len += ft_nbr_base(va_arg(*format, unsigned int), 16, 0);
+		len += ft_putstr("0x");
+		len += ft_nbr_base(va_arg(*format, unsigned int), 16, 0, &len);
 	}
 	else
 		len = ft_putchar(str[i]);
