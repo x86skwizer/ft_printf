@@ -6,7 +6,7 @@
 /*   By: yamrire <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 01:50:45 by yamrire           #+#    #+#             */
-/*   Updated: 2022/01/12 15:30:41 by yamrire          ###   ########.fr       */
+/*   Updated: 2022/01/15 22:11:16 by yamrire          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,20 @@ int	handle_print_cases(const char *str, int i, va_list *format)
 	else if (str[i] == 's')
 		len = ft_putstr(va_arg(*format, char *));
 	else if (str[i] == 'd' || str[i] == 'i')
-		len = ft_putnbr(va_arg(*format, int));
+		len = ft_putnbr(va_arg(*format, int), &len);
 	else if (str[i] == 'u')
 	{
 		unsign = va_arg(*format, unsigned int);
-		len = ft_putnbrunsign(unsign);
+		len = ft_putnbrunsign(unsign, &len);
 	}
 	else if (str[i] == 'x' || str[i] == 'X')
-		len = ft_nbr_base(va_arg(*format, unsigned int), 16, gethex(str[i]), &len);
+		ft_nbr_base(va_arg(*format, unsigned int), 16, gethex(str[i]), &len);
 	else if (str[i] == '%')
 		len = ft_putchar('%');
 	else if (str[i] == 'p')
 	{
-		len += ft_putstr("0x");
-		len += ft_nbr_base(va_arg(*format, unsigned int), 16, 0, &len);
+		len = ft_putstr("0x");
+		ft_nbr_base(va_arg(*format, unsigned long long), 16, 0, &len);
 	}
 	else
 		len = ft_putchar(str[i]);
@@ -78,7 +78,9 @@ int	ft_printf(const char *str, ...)
 
 // int	main(void)
 // {
-// 	int	test;
+// 	int test;
+// 	// int *p = &test;
+// 	// unsigned long long p1 = (unsigned long long)(&test);
 // 	ft_printf("%p\n", &test);
 // 	printf("%p\n", &test);
 // 	return 0;
