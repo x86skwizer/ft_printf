@@ -75,13 +75,3 @@ int	ft_printf(const char *str, ...)
 	va_end(format);
 	return (len);
 }
-
-// int	main(void)
-// {
-// 	int test;
-// 	// int *p = &test;
-// 	// unsigned long long p1 = (unsigned long long)(&test);
-// 	ft_printf("%p\n", &test);
-// 	printf("%p\n", &test);
-// 	return 0;
-// }
