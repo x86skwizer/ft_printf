@@ -35,7 +35,7 @@ int	handle_print_cases(const char *str, int i, va_list *format)
 	else if (str[i] == 'u')
 	{
 		unsign = va_arg(*format, unsigned int);
-		len = ft_putnbrunsign(unsign, &len);
+		len = ft_putnbr_unsign(unsign, &len);
 	}
 	else if (str[i] == 'x' || str[i] == 'X')
 		ft_nbr_base(va_arg(*format, unsigned int), 16, gethex(str[i]), &len);
