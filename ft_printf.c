@@ -6,7 +6,7 @@
 /*   By: yamrire <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 01:50:45 by yamrire           #+#    #+#             */
-/*   Updated: 2022/01/15 22:11:16 by yamrire          ###   ########.fr       */
+/*   Updated: 2022/01/21 04:18:08 by yamrire          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,9 @@ int	gethex(char c)
 
 int	handle_print_cases(const char *str, int i, va_list *format)
 {
-	unsigned int	unsign;
 	int				len;
 
 	len = 0;
-	unsign = 0;
 	if (str[i] == 'c')
 		len = ft_putchar(va_arg(*format, int));
 	else if (str[i] == 's')
@@ -33,10 +31,7 @@ int	handle_print_cases(const char *str, int i, va_list *format)
 	else if (str[i] == 'd' || str[i] == 'i')
 		len = ft_putnbr(va_arg(*format, int), &len);
 	else if (str[i] == 'u')
-	{
-		unsign = va_arg(*format, unsigned int);
-		len = ft_putnbr_unsign(unsign, &len);
-	}
+		ft_nbr_base(va_arg(*format, unsigned int), 10, 1, &len);
 	else if (str[i] == 'x' || str[i] == 'X')
 		ft_nbr_base(va_arg(*format, unsigned int), 16, gethex(str[i]), &len);
 	else if (str[i] == '%')
