@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yamrire <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: yamrire <yamrire@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 23:00:47 by yamrire           #+#    #+#             */
 /*   Updated: 2022/01/11 15:07:07 by yamrire          ###   ########.fr       */
