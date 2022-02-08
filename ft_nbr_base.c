@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_nbr_base.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yamrire <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: yamrire <yamrire@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 18:25:16 by yamrire           #+#    #+#             */
 /*   Updated: 2022/01/15 21:40:50 by yamrire          ###   ########.fr       */
