@@ -3,7 +3,7 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yamrire <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: yamrire <yamrire@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/08 13:18:57 by yamrire           #+#    #+#              #
 #    Updated: 2022/01/21 04:21:24 by yamrire          ###   ########.fr        #
